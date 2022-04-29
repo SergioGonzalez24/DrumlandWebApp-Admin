@@ -9,9 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  listaLogins:any[] = [
-    {username: 'Juan Perez', password: '1234567890123456'}
-  ];
+  listaLogins:any[] = [];
 
   form:FormGroup;
 
@@ -33,10 +31,6 @@ export class LoginComponent implements OnInit {
       password: this.form.get('password')?.value
     }
     this.listaLogins.push(login)
-
-
   }
 
   }
-
-
