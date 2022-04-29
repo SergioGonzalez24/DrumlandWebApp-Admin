@@ -1,13 +1,15 @@
-module.exports = async function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+const path = require('path'); 
+const bodyParser = require('body-parser');
+const express = require('express');
+const sequelize = require("./util/database");
+const adminPas = require('./models/adminPas');
+const adminPasRouts = require('./routes/adminPas');
+const app = express();
 
-    const name = (req.query.name || (req.body && req.body.name));
-    const responseMessage = name
-        ? "Hello, " + name + ". This HTTP triggered function executed successfully."
-        : "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.";
 
-    context.res = {
-        // status: 200, /* Defaults to 200 */
-        body: responseMessage
-    };
-}
+
+sequelize.authenticate().then(()=>{
+    console.log('Connection has been established successfully.');
+}).catch((err)=>{
+    console.log('Unable to connect to the database:', err);
+});
