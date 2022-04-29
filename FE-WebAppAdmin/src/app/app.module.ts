@@ -19,18 +19,18 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     LoginComponent,
     DashboardComponent
   ],
+  
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'dashboard', component: DashboardComponent },
-    ]),
-    HttpClientModule
-
-
+    ])
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
