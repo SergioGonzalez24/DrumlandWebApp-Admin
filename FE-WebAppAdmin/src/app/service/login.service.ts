@@ -7,11 +7,17 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class LoginService {
+  username: string | undefined;
+  password: string | undefined;
   
   constructor(private http: HttpClient) { }
 
-  postLogin(user: any) {
-    return this.http.post('http://localhost:3000/api/login', user);
+
+  Postlogin() {
+    const user = {username: this.username, password: this.password};
+    this.http.post('https://drumlandwebapp-admin.azurewebsites.net', user).subscribe( data => {
+      console.log(data);
+    });
   }
-  
+
 }
