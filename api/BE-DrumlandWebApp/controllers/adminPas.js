@@ -1,23 +1,9 @@
-const admin = require('../models/admin');
+const admin = require('../models/adminPas');
 const path = require('path');
 
 
-exports.getRegistros = (req,res)=>{
-    //SELECT * FROM usuario
-    admin.findAll()
-        .then(registros=>{
-            var data=[];
-            registros.forEach(registro=>{
-                data.push(registro.dataValues)
-            })
-            console.log(data);
-            
-            res.render('ejemploEJS.html',{
-                personas:data,
-                sesion: "autorizada",
-                fecha: 2021
-            });
-        })
-        .catch(error=>console.log(error))  
-    
+exports.getUsuarios = (req,res) => {
+    admin.findAll().then(usuarios => {
+        res.sendFile(path.join(__dirname,"../FE-DrumlandWebApp/src/index.html"));
+    });
 };

@@ -1,5 +1,5 @@
 const sequelize = require("./util/database");
-const Admin = require("../models/admin");
+const Admin = require("./models/adminPas");
 
 
 

@@ -14,4 +14,4 @@ const adminPas = sequelize.define('adminPas',{
 });
 
 
-module.exports = adminPas;
+module.exports = adminPas
