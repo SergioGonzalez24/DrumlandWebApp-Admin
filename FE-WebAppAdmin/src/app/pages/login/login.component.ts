@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//IMPORTAR FORMBUILDER
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-login',
@@ -10,29 +9,16 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class LoginComponent implements OnInit {
+  username: string | undefined;
+  password: string | undefined;
 
-  listaLogins:any[] = [];
-
-  form:FormGroup;
-
-  constructor(private fb:FormBuilder) { 
-    this.form = this.fb.group({
-      username: [''],
-      password: ['']
-    });
-    
-  }
-
+  constructor() {}
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
   login() {
-    console.log(this.form);
-    const login: any = {
-      username: this.form.get('username')?.value,
-      password: this.form.get('password')?.value
-    }
-    this.listaLogins.push(login)
+    console.log(this.username);
+    console.log(this.password);
   }
-
-  }
+}

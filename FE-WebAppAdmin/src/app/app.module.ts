@@ -5,6 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -27,20 +30,20 @@ import { LoginService } from './service/login.service';
   
   imports: [
     BrowserModule,
-    
     HttpClientModule,
-
     AppRoutingModule,
-
     ReactiveFormsModule,
 
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'dashboard', component: DashboardComponent },
-    ])
+    ]),
+    
+    FormsModule
   ],
 
   providers: [LoginService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
