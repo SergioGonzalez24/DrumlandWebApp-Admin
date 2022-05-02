@@ -9,24 +9,29 @@
 
                 <div class="offset-1 col-lg-10">
                     <!--CREACION DEL FORMULARIO Y LLAMADO AL TYPESCRIPT-->
-                    <form [formGroup]="form" (ngSubmit)="login()">
+                    <form [formGroup]="form" (ngSubmit)="login()" method="POST">
                         <!--CONTENEDORES DE ESTILO PARA LOS INPUTS-->
                         <div class="input-group Input-group-lg mb-3 log">
                             <span class="input-group-text ">
                                 <!--LLAMADO A LOS ICONOS Y A SUS VALIDADORES-->
                                 <i class="fa-solid fa-user"></i>
                             </span>
+
                             <!--INPUT PARA EL USERNAME-->
-                            <input formControlName="username" type="text" class="form-control" placeholder="Username">
+                            <input formControlName="username" type="text" class="form-control" placeholder="Username" required="required">
+
                         </div>
+
                             <!--CONTENEDORES DE ESTILO PARA LOS INPUTS-->
                         <div class="input-group Input-group-lg mb-2 log">
                             <span class="input-group-text">
                                 <!--LLAMADO A LOS ICONOS Y A SUS VALIDADORES-->
                                 <i class="fa-solid fa-lock"></i>
                             </span>
+
                             <!--INPUT PARA EL PASSWORD-->
-                            <input formControlName="password" type="password" class="form-control" placeholder="Password">
+                            <input formControlName="password" type="password" class="form-control" placeholder="Password" required="required">
+
                         </div>
             
                         <!--BOTON PARA HACER SUBMIT-->
@@ -35,6 +40,8 @@
                         </div> 
                             
                     </form>
+
+
                 </div>
 
             </div>

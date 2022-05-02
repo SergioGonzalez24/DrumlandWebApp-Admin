@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 //IMPORTAR FORMBUILDER
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   listaLogins:any[] = [];
