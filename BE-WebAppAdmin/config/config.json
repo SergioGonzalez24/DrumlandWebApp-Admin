@@ -1,0 +1,10 @@
+{
+    "host": "drumland.database.windows.net",
+    "user": "sergiomaster",
+    "database": "drumland",
+    "password": "Bke6X}H^UDz5e,Hf",
+    "port": "1433",
+    "dialect": "mssql"
+  }
+
+

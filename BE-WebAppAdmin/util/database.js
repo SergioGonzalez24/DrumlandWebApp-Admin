@@ -1,9 +1,11 @@
 const Sequelize = require('sequelize');
+const config = require('../config/config.json');
 
-const sequelize = new Sequelize('drumland','sergiomaster','Bke6X}H^UDz5e,Hf',{
-    host: 'drumland.database.windows.net',
-    port: '1433',
-    dialect: 'mssql',
+
+const sequelize = new Sequelize(config.database,config.user,config.password,{
+    host: config.host,
+    port: config.port,
+    dialect: config.dialect,
 });
 
 module.exports = sequelize;
