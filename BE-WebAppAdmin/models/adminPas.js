@@ -15,7 +15,6 @@ const adminPas = sequelize.define('adminPas',{
 {
     tableName: 'adminPas',
     freezeTableName: true
-
 });
 
 module.exports = adminPas;
