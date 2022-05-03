@@ -1,10 +1,10 @@
-const admin = require("../util/database").models.admin;
-const sequelize = require('../util/database');
-const path = require('path');
+const adminPas = require('../models/adminPas');
 
 
 
-exports.getUsuarios = (req,res)=>{
-    console.log(admin.finAll());
-};
-
+exports.getUsers = (req, res) => {
+    adminPas.findAll()
+        .then(username=>{
+            console.log("adminPas: ", adminPas);
+        })
+}

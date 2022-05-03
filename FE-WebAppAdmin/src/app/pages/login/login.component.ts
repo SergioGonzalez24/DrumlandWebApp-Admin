@@ -1,4 +1,5 @@
-import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,8 @@ import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
 })
 
 export class LoginComponent implements OnInit {
-  username: string  = "admin";
-  password: string = "admin";
+  username: string | undefined;
+  password: string | undefined;
 
   constructor() {}
   ngOnInit(): void {
@@ -16,10 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-
-    if(this.username == "admin" && this.password == "admin") {
     console.log(this.username);
     console.log(this.password);
-   }
   }
 }

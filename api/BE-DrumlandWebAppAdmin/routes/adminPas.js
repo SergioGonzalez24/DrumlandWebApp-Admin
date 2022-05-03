@@ -1,5 +1,7 @@
-const router = require('express').Router();
-const adminPasController = require('../controllers/adminPas');
+const express = require("express");
+const router = express.Router();
+const adminPas = require("../controllers/adminPas");
 
+router.get("/buscarUsuario", adminPas.getUsers);
 
-router.get=("/buscarUsuario",adminPasController.getUsuarios);
+module.exports = router;

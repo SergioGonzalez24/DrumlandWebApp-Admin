@@ -1,19 +1,17 @@
 const Sequelize = require('sequelize');
+const sequelize = require("../util/database");
 
-const adminPas = (sequelize) => {
-    sequelize.define('adminPas',{
+const adminPas = sequelize.define('adminPas',{
     //Atributos de mi tabla
     username: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false
     },
     passwordUser: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false
     }
 });
-}
-
 
 
 module.exports = adminPas;
