@@ -17,7 +17,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 //Servicios
-import { LoginService } from './service/login.service';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { LoginService } from './service/login.service';
     FormsModule
   ],
 
-  providers: [LoginService],
+  providers: [],
 
   bootstrap: [AppComponent]
 })
