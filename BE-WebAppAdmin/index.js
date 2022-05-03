@@ -6,6 +6,8 @@ const cors = require('cors');
 
 const app = express();
 
+const ports = process.env.PORT || 3000;
+
 app.use(express.json());
 //Sirve para leer la información que envian los formularios
 app.use(express.urlencoded({extended:true}))
@@ -15,9 +17,4 @@ app.use(cors())
 app.use('/adminPas', adminPasRouter);
 
 
-sequelize.sync()
-    .then(resultado=>{
-        console.log("Conexion exitosa");
-        app.listen(8080,()=>console.log("Servidor en línea en el puerto 8080"));
-    })
-    .catch(error=>console.log(error))
+app.listen(ports, () => console.log(`Listening on port ${ports}`));

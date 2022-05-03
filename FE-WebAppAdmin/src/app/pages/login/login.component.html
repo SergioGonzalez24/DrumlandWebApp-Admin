@@ -10,30 +10,43 @@
                 <div class="offset-1 col-lg-10">
                     <!--CREACION DEL FORMULARIO Y LLAMADO AL TYPESCRIPT-->
                     <div class="login">
-                        <form class="custom-form">
 
-                             <!--CONTENEDORES DE ESTILO PARA LOS INPUTS-->
-                        <div class="input-group Input-group-lg mb-3 log">
-                            <span class="input-group-text ">
-                                <!--LLAMADO A LOS ICONOS Y A SUS VALIDADORES-->
-                                <i class="fa-solid fa-user"></i>
-                            </span>
-                                <input class="form-control" type="text" [(ngModel)]="username" name="username" placeholder="username" required="required"/>
-                        </div>
 
-                        <div class="input-group Input-group-lg mb-2 log">
-                            <span class="input-group-text">
-                                <!--LLAMADO A LOS ICONOS Y A SUS VALIDADORES-->
-                                <i class="fa-solid fa-lock"></i>
-                            </span>
-                             <input class="form-control" type="password" [(ngModel)]="password" name="password" placeholder="Password" required="required"/>
-                        </div>
+
                         
-                        <div class="d-grid gap-2 log">
-                            <a href="/dashboard" class="btn btn-succes btn-lg accessbtn" role="button" type="submit" action="buscarUsuario" (click)="login()">Log in</a>
-                        </div>
-                          
+                        <form [formGroup]="form" (ngSubmit)="login()" method="GET">
+                            <!--CONTENEDORES DE ESTILO PARA LOS INPUTS-->
+                            <div class="input-group Input-group-lg mb-3 log">
+                                <span class="input-group-text ">
+                                    <!--LLAMADO A LOS ICONOS Y A SUS VALIDADORES-->
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+    
+                                <!--INPUT PARA EL USERNAME-->
+                                <input formControlName="username" type="text" class="form-control" placeholder="Username" required="required">
+    
+                            </div>
+    
+                                <!--CONTENEDORES DE ESTILO PARA LOS INPUTS-->
+                            <div class="input-group Input-group-lg mb-2 log">
+                                <span class="input-group-text">
+                                    <!--LLAMADO A LOS ICONOS Y A SUS VALIDADORES-->
+                                    <i class="fa-solid fa-lock"></i>
+                                </span>
+    
+                                <!--INPUT PARA EL PASSWORD-->
+                                <input formControlName="password"  type="password" class="form-control" placeholder="Password" required="required">
+    
+                            </div>
+                
+                            <!--BOTON PARA HACER SUBMIT-->
+                            <div class="d-grid gap-2 log">
+                                <button type="submit" [disabled]="!form.valid" class="btn btn-succes btn-lg accessbtn">Login</button>
+                            </div> 
                         </form>
+
+
+
                       </div>
                 </div>
 
