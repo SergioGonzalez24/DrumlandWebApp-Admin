@@ -1,3 +1,4 @@
+const sewuelize =require('sequelize')
 const adminPas = require('../models/adminPas');
 
 exports.login = async(req,res )=>{
