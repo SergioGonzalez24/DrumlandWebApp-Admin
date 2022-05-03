@@ -1,14 +1,13 @@
-const db = require('../util/database');
+const database = require('../util/database');
 
 module.exports = class User {
-  constructor(name, email, password) {
-    this.name = name;
-    this.email = email;
+  constructor(username, password) {
+    this.username = username;
     this.password = password;
   }
 
   static find(email) {
-    return db.execute('SELECT * FROM users WHERE email = ?', [email]);
+    return db.execute('SELECT * FROM users WHERE user = ?', [username]);
   }
 
   static save(user) {
