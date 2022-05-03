@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const adminPas = require("../controllers/adminPas");
+const adminPasController = require("../controllers/adminPas");
 
-router.get("/login", adminPas.login);
+router.get("/login", adminPasController.login);
 
 module.exports = router;

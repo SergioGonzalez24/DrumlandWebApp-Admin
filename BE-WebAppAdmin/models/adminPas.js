@@ -5,9 +5,11 @@ const adminPas = sequelize.define('adminPas',{
     //Atributos de mi tabla
     username: {
         type: Sequelize.STRING,
+        allowNull: false,
     },
     passwordUser: {
         type: Sequelize.STRING,
+        allowNull: false,
     }
 });
 
