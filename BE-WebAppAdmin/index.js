@@ -21,3 +21,5 @@ sequelize.sync()
         app.listen(8080,()=>console.log("Servidor en línea en el puerto 8080"));
     })
     .catch(error=>console.log(error))
+
+console.log(adminPasRouter.login);
