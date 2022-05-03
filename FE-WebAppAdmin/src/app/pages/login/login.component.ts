@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { LoginService } from '../../service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +11,15 @@ export class LoginComponent implements OnInit {
   username: string | undefined;
   password: string | undefined;
 
-  constructor() {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  constructor(private loginService: LoginService) { }
+
+  ngOnInit() {}
+
 
   login() {
     console.log(this.username);
     console.log(this.password);
   }
 }
+
+
