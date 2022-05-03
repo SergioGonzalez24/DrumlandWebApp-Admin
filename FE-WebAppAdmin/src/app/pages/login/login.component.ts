@@ -27,5 +27,9 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     console.log(this.form.value);
+    if(this.form.value.username == "admin" && this.form.value.password == "admin"){
+      alert("Login Successful");
+      window.location.href='/dashboard';
+    }
   }
 }

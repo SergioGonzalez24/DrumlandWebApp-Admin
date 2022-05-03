@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path'); 
-const bodyParser = require('body-parser');
 
 const sequelize = require('./util/database');
 const adminPasRouter = require('./routes/adminPas');
@@ -8,7 +7,6 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname,'public')));
 app.use(express.urlencoded({extended:true}))
 app.use(cors())
 
