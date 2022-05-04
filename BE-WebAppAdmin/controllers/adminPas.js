@@ -18,5 +18,10 @@ exports.getLogin = async(req,res )=>{
 
     });
 
-    res.send(username);
+    if(busqueda.length > 0){
+        res.send('Login correcto');
+    }
+    else{
+        res.send('Login incorrecto');
+    }
 }

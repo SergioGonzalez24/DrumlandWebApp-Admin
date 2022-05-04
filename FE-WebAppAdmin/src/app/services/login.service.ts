@@ -17,6 +17,6 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   getLogin(username: string, password: string):Observable<User> {
-    return this.http.get<User>('http://localhost:8080/adminPas/login'+ username + password);
+    return this.http.get<User>('http://localhost:8080/adminPas/login');
   }
 }
