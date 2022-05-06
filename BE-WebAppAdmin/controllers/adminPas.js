@@ -1,3 +1,4 @@
+const sewuelize =require('sequelize')
 const adminPas = require('../models/adminPas');
 const sequelize = require('../util/database');
 const Sequelize = require('sequelize');
