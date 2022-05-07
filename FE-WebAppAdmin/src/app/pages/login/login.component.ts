@@ -1,7 +1,8 @@
 import { typeWithParameters } from "@angular/compiler/src/render3/util";
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import {LoginService} from "../../services/login.service";
+import { LoginService } from "src/app/service/login.service";
+
 
 
 
@@ -31,12 +32,18 @@ export class LoginComponent implements OnInit {
 
 
 
+  /*
   login(): void {
     console.log(this.form.value);
+
+  
     if(this.form.value.username == "admin" && this.form.value.passwordUser == "admin"){
       alert("Login Successful");
       window.location.href='/dashboard';
     }
-
   }
+    */
+
+  login(): void {}
+
 }

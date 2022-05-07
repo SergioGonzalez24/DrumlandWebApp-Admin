@@ -19,9 +19,13 @@ exports.getLogin = async(req,res )=>{
     });
 
     if(busqueda.length > 0){
-        res.send('Login correcto');
+        
+        //res.json(busqueda);
+        res.json(200 , { message: 'Login correcto' });
+        //res.json(window.location.href='https://lemon-desert-09c7b290f.1.azurestaticapps.net/dashboard');
     }
     else{
-        res.send('Login incorrecto');
+        //res.json(console.error());
+        res.json(404 , { message: 'Login incorrecto' });
     }
 }
