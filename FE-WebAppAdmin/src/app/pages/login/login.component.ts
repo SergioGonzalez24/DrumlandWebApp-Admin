@@ -14,19 +14,40 @@ import { LoginService } from "src/app/service/login.service";
 export class LoginComponent implements OnInit {
   form: FormGroup | any;
 
-
-  constructor(
-    private loginService: LoginService,
-  ) {}
+  constructor(private api: LoginService) {}
 
   ngOnInit(): void {
     this.form = this.createFormGroup();
+    this.api.getLogin().subscribe((data) => {
+      console.log(data);
+
+
+    });
+
   }
 
+  
   createFormGroup(): FormGroup {
+
     return new FormGroup({
       username: new FormControl("", [Validators.required]),
       passwordUser: new FormControl("", [Validators.required]),
+
+    });
+
+  }
+
+
+
+  login(): void {
+
+    //const username = this.form.value.username;
+    //const password = this.form.value.passwordUser;
+
+    this.api.getLogin().subscribe((data) => {
+      console.log(data);
+  
+
     });
   }
 
@@ -44,6 +65,6 @@ export class LoginComponent implements OnInit {
   }
     */
 
-  login(): void {}
+
 
 }
