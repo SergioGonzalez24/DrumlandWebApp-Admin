@@ -24,8 +24,8 @@ exports.getLogin = async(req,res )=>{
     if(busqueda.length > 0){
         
         //res.json(busqueda);
-        //res.json(200 , { message: 'Login correcto' });
-        res.redirect('/dashboard');
+        res.json(200 , { message: 'Login correcto' });
+        //res.redirect('https://lemon-desert-09c7b290f.1.azurestaticapps.net/dashboard');
     }
     else{
         //res.json(console.error());
